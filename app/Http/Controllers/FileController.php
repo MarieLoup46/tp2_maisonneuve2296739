@@ -65,7 +65,7 @@ class FileController extends Controller
         // Utilisation de 'content' pour le contenu du fichier
         Storage::disk('public')->put($request->file, 'content');
 
-        $path = 'app/public/'.$request->file;
+        $path = Storage::path('public/'.$request->file);
 
         $newPost = File::create([
             'title_fr' => $request->title_fr,
